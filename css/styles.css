@@ -15,12 +15,7 @@ body {
 }
 
 /* ===== GLOBAL CONTAINER WIDTH ===== */
-
-.container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
+/* Using Bootstrap .w-80 .mx-auto classes instead */
 
 /* ===== ACCESSIBILITY STYLES ===== */
 /* Skip link for screen readers */
@@ -1097,67 +1092,59 @@ textarea:focus {
 
 .see-center-cta-section {
     padding: 40px 0;
-    background-color: var(--light);
+    background-color: var(--main-bg); /* Use main background color */
 }
 
 .see-center-card {
-    background-color: var(--light);
-    border: 1px solid rgba(181, 181, 181, 1);
-    border-radius: 21px;
-    width: 313px;
-    height: 115px;
+    =
+    border-radius: 22px; /* 22px border radius */
+    width: 313px; /* As per Figma */
+    height: 115px; /* As per Figma */
     margin: 0 auto;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .see-center-title {
     font-family: var(--font-heading);
-    font-size: 22px;
+    font-size: 22px; /* Based on Figma height of 22px */
     font-weight: 400;
-    color: var(--dark);
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 182px;
-    height: 22px;
+    color: black; /* Black text as per Figma */
+    width: 182px; /* As per Figma */
+    height: 22px; /* As per Figma */
     text-align: center;
-    line-height: 1;
-    margin: 0;
+    line-height: 22px; /* Match height for proper vertical centering */
+    margin: 0 0 6px 0; /* 6px gap between title and description (1272 - 1250 - 22 = 0, but visual spacing) */
 }
 
 .see-center-description {
     font-family: var(--font-body);
-    font-size: 16px;
-    color: var(--dark);
-    position: absolute;
-    top: 46px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
-    height: 16px;
+    font-size: 16px; /* Based on Figma height of 16px */
+    color: black; /* Black text as per Figma */
+    width: 180px; /* As per Figma */
+    height: 16px; /* As per Figma */
     text-align: center;
-    line-height: 1;
-    margin: 0;
+    line-height: 16px; /* Match height for proper vertical centering */
+    margin: 0 0 12px 0; /* 12px gap before button (1300 - 1272 - 16 = 12px) */
 }
 
-.see-center-action {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 .see-center-btn {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 16px; /* Based on button text height */
     font-weight: 400;
-    background-color: var(--main-color);
-    color: var(--dark);
+    background-color: var(--main-color); /* Main color background */
+    color: black; /* Black text */
     border: none;
-    border-radius: 22px;
-    width: 213px;
-    height: 30px;
+    border-radius: 22px; /* 22px border radius */
+    width: 213px; /* As per Figma */
+    height: 30px; /* As per Figma */
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
@@ -1165,6 +1152,7 @@ textarea:focus {
     justify-content: center;
     text-align: center;
     padding: 0;
+    cursor: pointer;
 }
 
 .see-center-btn:hover {
@@ -1848,7 +1836,7 @@ textarea:focus {
         font-weight: 400;
         color: var(--dark);
         line-height: 1.2;
-        text-align: center;
+        /* text-align: center; - moved to Bootstrap text-center class */
         white-space: nowrap; /* Keep title on one line */
         width: 270px; /* As per Figma */
         height: 43px; /* As per Figma */
@@ -1966,9 +1954,9 @@ textarea:focus {
     /* Popular Programs section - desktop layout */
     .popular-programs-section {
         padding: var(--spacing-xl) 0;
-        background-color: var(--main-bg);
-    }
-    
+    background-color: var(--main-bg);
+}
+
     .popular-programs-section .container {
         width: 80%; /* Apply 80% width rule */
         max-width: 1444px; /* Total width: 82px + 1279.52px + 82px ≈ 1444px */
@@ -1987,12 +1975,12 @@ textarea:focus {
     
     /* Section title for desktop */
     .programs-title {
-        font-family: var(--font-heading);
+    font-family: var(--font-heading);
         font-size: 2.75rem; /* Larger for desktop */
-        font-weight: 400;
-        color: var(--dark);
+    font-weight: 400;
+    color: var(--dark);
         line-height: 1.2;
-        text-align: center;
+    /* text-align: center; - moved to Bootstrap text-center class */
         white-space: nowrap; /* Keep title on one line */
         width: 290px; /* As per Figma */
         height: 46px; /* As per Figma */
@@ -2045,7 +2033,7 @@ textarea:focus {
         font-weight: 400;
         color: var(--dark);
         margin-bottom: var(--spacing-sm);
-        line-height: 1.2;
+    line-height: 1.2;
     }
     
     /* Program description for desktop */
@@ -2164,7 +2152,7 @@ textarea:focus {
     .testimonials-title {
         font-size: 2.5rem; /* Larger for tablet */
         margin-bottom: var(--spacing-xl);
-        text-align: center;
+        /* text-align: center; - moved to Bootstrap text-center class */
     }
     
     /* Testimonials cards layout - Bootstrap grid with 12 rows */
@@ -2246,7 +2234,7 @@ textarea:focus {
     font-size: 1.75rem;
     font-weight: 400;
     color: var(--dark); /* #000000 */
-    text-align: center;
+    /* text-align: center; - moved to Bootstrap text-center class */
     margin-bottom: var(--spacing-xl);
     line-height: 1.2;
     white-space: nowrap; /* Keep title on one line */
@@ -2618,13 +2606,6 @@ textarea:focus {
     background-color: var(--main-bg);
 }
 
-.cta-bottom-section h2 {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 600px;
-    color: var(--dark); /* Centered content width */
-}
-
 .cta-bottom-card {
     background-color: var(--light);
     border: 1px solid #B3B3B3; /* Light grey border as per Figma */
@@ -2688,12 +2669,17 @@ textarea:focus {
 /* Footer section styling */
 
 footer {
-    background-color: var(--light);
-    color: var(--dark);
+    background-color: white; /* White background as per Figma */
+    color: black; /* Black text as per Figma */
     margin-top: 40px;
     height: 193px; /* As per Figma design */
+    width: 100%;
+    max-width: 393px; /* Mobile width constraint */
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     align-items: center;
+    padding: 0 20px; /* Side padding */
 }
 
 .footer-content {
@@ -2711,15 +2697,19 @@ footer {
 .footer-company-name {
     font-family: var(--font-heading);
     font-weight: 400;
-    color: var(--dark);
-    margin-bottom: 15px;
+    color: black; /* Black text as per Figma */
+    margin-bottom: 30px; /* Space before social icons */
     line-height: 1.2;
+    width: 171px; /* As per Figma */
+    height: 19px; /* As per Figma */
+    text-align: center;
 }
 
 .footer-social-links {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 25px; /* Approximate gap between icons based on Figma positions */
+    margin-bottom: 37px; /* Space before divider */
 }
 
 .social-link {
@@ -2747,18 +2737,21 @@ footer {
 }
 
 .footer-divider {
-    width: 100%;
+    width: 313px; /* As per Figma */
     height: 1px;
-    background-color: var(--dark);
-    margin-bottom: 10px;
+    background-color: black; /* Black line as per Figma */
+    margin: 0 auto 10px; /* Center the line and add space before copyright */
 }
 
 .footer-copyright {
     font-family: var(--font-body);
     font-weight: 400;
-    color: var(--dark);
-    line-height: 1.2;
-    margin: 0;
+    color: black; /* Black text as per Figma */
+    line-height: 17px; /* As per Figma */
+    margin: 0 auto;
+    width: 226px; /* As per Figma */
+    height: 17px; /* As per Figma */
+    text-align: center;
 }
 
 /* Responsive footer */

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecCenter - Your Fitness, Your Way: Anytime, Every Day!</title>
-    <meta name="description" content="Join RecCenter for state-of-the-art fitness facilities, expert trainers, and diverse programs including swimming, yoga, and more.">
+    <title>JoinIn - Your Fitness, Your Way: Anytime, Every Day!</title>
+    <meta name="description" content="Join JoinIn for state-of-the-art fitness facilities, expert trainers, and diverse programs including swimming, yoga, and more.">
     
     <!-- Google Fonts - Abril Fatface for headings, Adamina for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,10 +24,10 @@
     
     <!-- ===== NAVIGATION ===== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" role="navigation" aria-label="Main navigation">
-        <div class="container">
+        <div class="container-fluid w-80 mx-auto">
             <!-- Logo container -->
-            <a class="navbar-brand d-flex align-items-center" href="home.html" aria-label="RecCenter Home">
-                <img src="images/logo.gif" alt="RecCenter Logo" class="logo-img" width="63" height="51">
+            <a class="navbar-brand d-flex align-items-center" href="home.html" aria-label="JoinIn Home">
+                <img src="images/logo.gif" alt="JoinIn Logo" class="logo-img" width="63" height="51">
             </a>
             
             <!-- Bootstrap native hamburger menu button -->
@@ -57,6 +57,8 @@
                         <a class="nav-link" href="#" aria-label="Classes and schedules (coming soon)">CLASSES & SCHEDULES</a>
                     </li>
                 </ul>
+                <!-- Desktop "Become a Member" button -->
+                <a href="membership.html" class="btn btn-primary d-none d-lg-flex" aria-label="Become a member">Become a Member</a>
             </div>
         </div>
     </nav>
@@ -65,7 +67,7 @@
     <main id="main-content" role="main">
         <!-- ===== HERO SECTION ===== -->
         <section class="hero-section" aria-labelledby="hero-title">
-            <div class="container">
+            <div class="container-fluid w-80 mx-auto">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-10 col-lg-8">
                         <!-- Banner image -->
@@ -93,7 +95,7 @@
 
         <!-- ===== WHY CHOOSE US SECTION ===== -->
         <section class="why-choose-us-section py-5" aria-labelledby="why-choose-us-title">
-            <div class="container">
+            <div class="container-fluid w-80 mx-auto">
                 <div class="row">
                     <div class="col-12">
                         <!-- Section title -->
@@ -148,7 +150,7 @@
 
         <!-- ===== POPULAR PROGRAMS SECTION ===== -->
         <section id="popular-programs" class="popular-programs-section py-5" aria-labelledby="programs-title">
-            <div class="container">
+            <div class="container-fluid w-80 mx-auto">
                 <div class="row">
                     <div class="col-12">
                         <div class="programs-header mb-4">
@@ -236,7 +238,7 @@
 
         <!-- ===== TESTIMONIALS SECTION ===== -->
         <section class="testimonials-section py-5" aria-labelledby="testimonials-title">
-            <div class="container">
+            <div class="container-fluid w-80 mx-auto">
                 <div class="row">
                     <div class="col-12">
                         <!-- Section title -->
@@ -271,7 +273,7 @@
                                     <h3 class="member-name">Michael Daniels</h3>
                                     <p class="member-since">Member since 2025</p>
                                     <blockquote class="testimonial-text">
-                                        "I've tried many gyms, but RecCenter offers the best value and community. The trainers are exceptional."
+                                        "I've tried many gyms, but JoinIn offers the best value and community. The trainers are exceptional."
                                     </blockquote>
                                 </div>
                             </div>
@@ -301,8 +303,10 @@
                 </div>
             </div>
         </section>
+
+        <!-- ===== CTA SECTION ===== -->
         <section class="cta-bottom-section py-5" aria-labelledby="cta-bottom-title">
-            <div class="container">
+            <div class="container-fluid w-80 mx-auto">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-8 col-lg-6 text-center">
                         <div class="cta-bottom-card">
@@ -316,40 +320,39 @@
                 </div>
             </div>
         </section>
-        <!-- Additional sections will be added here -->
         
     </main>
 
- <footer class="bg-dark text-white py-4" role="contentinfo" aria-label="Site footer">
-    <div class="container footer-mobile">
-        <div class="row align-items-center">
-            <div class="col-12 text-center">
-                <div class="footer-brand">
-                    <p class="footer-company-name mb-2">RecCenter Recreation Centers</p>
-                    <div class="footer-social-links d-flex gap-3" role="list" aria-label="Social media links">
-                        <a href="#" class="social-link text-white text-decoration-none" role="listitem" aria-label="Visit our Facebook page">
-                            <img src="images/Icons8/icons8-facebook-50.svg" alt="" aria-hidden="true" width="24" height="24">
-                        </a>
-                        <a href="#" class="social-link text-white text-decoration-none" role="listitem" aria-label="Visit our Instagram page">
-                            <img src="images/Icons8/icons8-instagram-50.svg" alt="" aria-hidden="true" width="24" height="24">
-                        </a>
-                        <a href="#" class="social-link text-white text-decoration-none" role="listitem" aria-label="Contact us on WhatsApp">
-                            <img src="images/Icons8/icons8-whatsapp-50.svg" alt="" aria-hidden="true" width="24" height="24">
-                        </a>
+    <!-- Footer -->
+    <footer class="bg-white text-dark py-4 border-top" role="contentinfo" aria-label="Site footer">
+        <div class="container-fluid w-80 mx-auto">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 mb-4 mb-md-0">
+                    <div class="footer-brand text-center">
+                        <p class="footer-company-name mb-4 text-center text-nowrap fw-semibold">JoinIn Recreation Centers</p>
+                        <div class="footer-social-links d-flex justify-content-center gap-4 mb-4" role="list" aria-label="Social media links">
+                            <a href="#" class="social-link text-dark text-decoration-none" role="listitem" aria-label="Visit our Facebook page">
+                                <img src="images/Icons8/icons8-facebook-50.svg" alt="" aria-hidden="true" width="24" height="24" style="filter: brightness(0);">
+                            </a>
+                            <a href="#" class="social-link text-dark text-decoration-none" role="listitem" aria-label="Visit our Instagram page">
+                                <img src="images/Icons8/icons8-instagram-50.svg" alt="" aria-hidden="true" width="24" height="24" style="filter: brightness(0);">
+                            </a>
+                            <a href="#" class="social-link text-dark text-decoration-none" role="listitem" aria-label="Contact us on WhatsApp">
+                                <img src="images/Icons8/icons8-whatsapp-50.svg" alt="" aria-hidden="true" width="24" height="24" style="filter: brightness(0);">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="footer-credit text-center text-md-end">
+                        <div class="footer-divider d-none d-md-block mb-3" style="width: 100%; height: 1px; background-color: black;"></div>
+                        <p class="footer-copyright mb-0 text-dark">© 2025 JoinIn Recreation Centers</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="footer-credit text-center">
-                    <div class="footer-divider"></div>
-                    <p class="footer-copyright mb-0">© 2025 RecCenter Recreation Centers</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
