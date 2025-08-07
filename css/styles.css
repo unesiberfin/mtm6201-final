@@ -51,54 +51,6 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-/* Hover and focus states for all interactive elements */
-.nav-link:hover,
-.nav-link:focus {
-    color: var(--main-color) !important;
-    transform: translateY(-1px);
-    transition: all 0.3s ease;
-}
-
-.btn:hover,
-.btn:focus {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.social-link:hover,
-.social-link:focus {
-    opacity: 0.7;
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-}
-
-.plan-card:hover,
-.benefit-card:hover,
-.addon-card:hover,
-.facility-card:hover,
-.team-card:hover,
-.value-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover,
-.faq-question:focus {
-    background-color: rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s ease;
-}
-
-.see-center-btn:hover,
-.see-center-btn:focus {
-    background-color: var(--dark);
-    color: var(--light);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
 /* Screen reader only class */
 .sr-only {
     position: absolute;
@@ -190,37 +142,263 @@ textarea:focus {
 }
 
 /* ===== HERO SECTION ===== */
-/* Full-width hero section with background image */
+/* Hero section based on Figma specifications */
 
 /* Hero section container */
 .hero-section {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--main-bg);
-    margin-top: 73px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: 220px;
+    padding: var(--spacing-lg) 0 0 0; /* Add top padding for better spacing */
+    background: var(--main-bg);
+    margin-top: 73px; /* Account for fixed navbar */
+    width: 100vw; /* Full viewport width */
+    margin-left: 0;
+    margin-right: 0;
 }
 
-/* Tablet styles (768px and up) */
+/* Override container width for hero section */
+.hero-section .container {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Hero banner container */
+.hero-banner {
+    width: 393px;
+    height: 320px; /* Increased from 220.85px */
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+/* Hero banner image */
+.hero-banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Hero title styling */
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--dark);
+    line-height: 1.2;
+    margin: var(--spacing-md) auto 0 auto;
+    width: 280px;
+    max-width: calc(100% - var(--spacing-xl) * 2);
+    text-align: center;
+}
+
+/* Hero description - hidden on mobile, shown on tablet+ */
+.hero-description {
+    display: none;
+    color: var(--dark);
+}
+
+/* Hero buttons container */
+.hero-buttons {
+    margin: var(--spacing-md) auto 0 auto;
+    width: 314px;
+    max-width: calc(100% - var(--spacing-xl) * 2);
+}
+
+/* Primary button styling */
+.btn-primary-custom {
+    background: var(--main-color);
+    border: none;
+    color: var(--dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 22px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-primary-custom:hover,
+.btn-primary-custom:focus {
+    background: var(--main-color);
+    color: var(--dark);
+    transform: translateY(-2px);
+    text-decoration: none;
+    filter: brightness(1.1);
+}
+
+/* Secondary button styling */
+.btn-secondary-custom {
+    background: transparent;
+    border: 2px solid var(--dark);
+    color: var(--dark);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 22px;
+    font-family: var(--font-body);
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-secondary-custom:hover,
+.btn-secondary-custom:focus {
+    background: var(--dark);
+    color: var(--light);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+/* Focus styles for accessibility */
+.btn-primary-custom:focus,
+.btn-secondary-custom:focus {
+    outline: 3px solid var(--main-color);
+    outline-offset: 2px;
+}
+
+/* Responsive adjustments for hero section - Tablet */
 @media (min-width: 768px) {
     .hero-section {
-        height: 300px;
-        max-width: 768px;
+        height: 487px; /* As per Figma: y=90 to y=577 */
+        padding: 40px;
+        padding-top: 80px; /* Additional top padding for tablet to prevent navbar overlap */
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-section .container {
+        max-width: 80%; /* Apply 80% width rule */
+        width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+    
+    .hero-section .row {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        height: 100%;
+    }
+    
+    .hero-section .col-12 {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns for content and image */
+        gap: 40px; /* Gap between content and image */
+        align-items: center;
+        padding: 0;
+        height: 100%;
+    }
+    
+    /* Hero content wrapper - left side */
+    .hero-content-wrapper {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 389px; /* Match image height */
+    }
+    
+    /* Hero text content container - only styled on tablet */
+    .hero-text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    /* Hero banner - right side */
+    .hero-banner {
+        order: 2;
+        width: 100%;
+        height: 320px; /* Adjusted height for tablet */
+        margin: 0;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+    
+    .hero-banner-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Hero title - left aligned */
+    .hero-title {
+        font-size: 2.5rem; /* Larger for tablet */
+        text-align: left;
+        margin: 0 0 var(--spacing-md) 0;
+        width: auto; /* Allow flexible width */
+        line-height: 1.1;
+    }
+    
+    /* Hero description - show on tablet */
+    .hero-description {
+        display: block;
+        font-size: 1.1rem;
+        text-align: left;
+        margin: 0;
+        width: 317px; /* As per Figma */
+        line-height: 1.4;
+        color: var(--dark);
+    }
+    
+    /* Hero buttons - stacked vertically on tablet */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        margin: 0;
+        width: auto;
+        justify-content: flex-start;
+        align-self: flex-start;
+    }
+    
+    .hero-buttons .btn-primary-custom,
+    .hero-buttons .btn-secondary-custom {
+        width: 270px; /* As per Figma */
+        height: 55px; /* As per Figma */
+        font-size: 1rem;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+    }
+    
+    /* Secondary button - black background with white text */
+    .hero-buttons .btn-secondary-custom {
+        background: var(--dark);
+        color: var(--light);
+        border: 1px solid #B3B3B3;
+    }
+    
+    .hero-buttons .btn-secondary-custom:hover {
+        background: var(--dark);
+        color: var(--light);
+        opacity: 0.9;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-banner {
+        height: 500px; /* Increased from 400px */
     }
     
     .hero-title {
-        font-size: 36px;
-        max-width: 500px;
-        margin-bottom: 20px;
-    }
-    
-    .hero-description {
-        font-size: 18px;
-        max-width: 600px;
-        line-height: 1.5;
+        font-size: 2.5rem;
     }
 }
 
@@ -243,7 +421,7 @@ textarea:focus {
     }
 }
 
-/* Hero background with overlay */
+/* Hero background with overlay - kept for other pages */
 .hero-background {
     position: absolute;
     top: 0;
@@ -268,7 +446,7 @@ textarea:focus {
     background-color: rgba(20, 103, 107, 0.55); /* 55% opacity overlay */
 }
 
-/* Hero content overlay */
+/* Hero content overlay - kept for other pages */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -279,19 +457,7 @@ textarea:focus {
     padding: 0 20px;
 }
 
-/* Hero title styling */
-.hero-title {
-    font-family: var(--font-heading);
-    font-size: 27px;
-    font-weight: 400;
-    color: white;
-    text-align: center;
-    line-height: 1.2;
-    max-width: 237px;
-    margin: 0 auto 10px;
-}
-
-/* Hero description styling */
+/* Hero description styling - kept for other pages */
 .hero-description {
     font-family: var(--font-body);
     font-size: 16px;
@@ -302,17 +468,7 @@ textarea:focus {
     margin: 0 auto;
 }
 
-/* Hero buttons container */
-.hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    max-width: 314px; /* As per Figma design */
-    margin: 0 auto;
-}
-
-/* Hero button styling */
+/* Hero button styling - kept for other pages */
 .hero-btn {
     font-family: var(--font-body); /* Adamina for buttons */
     font-size: 16px;
@@ -331,7 +487,7 @@ textarea:focus {
     justify-content: center;
 }
 
-/* Primary button styling */
+/* Primary button styling - kept for other pages */
 .btn-primary {
     background-color: var(--main-color); /* #AAE83E */
     color: var(--dark); /* #000000 */
@@ -344,7 +500,7 @@ textarea:focus {
     transform: translateY(-2px);
 }
 
-/* Outline button styling */
+/* Outline button styling - kept for other pages */
 .btn-outline-dark {
     background-color: transparent;
     color: var(--dark);
@@ -907,66 +1063,6 @@ textarea:focus {
     transform: translateY(-1px);
 }
 
-/* ===== RESPONSIVE DESIGN FOR CTA SECTION ===== */
-
-/* Tablet styles (768px and up) */
-@media (min-width: 768px) {
-    .see-center-card {
-        width: 500px;
-        height: 150px;
-    }
-    
-    .see-center-title {
-        font-size: 28px;
-        width: 300px;
-        height: 28px;
-        top: 30px;
-    }
-    
-    .see-center-description {
-        font-size: 18px;
-        width: 400px;
-        height: 18px;
-        top: 65px;
-    }
-    
-    .see-center-btn {
-        width: 280px;
-        height: 40px;
-        font-size: 18px;
-        bottom: 20px;
-    }
-}
-
-/* Desktop styles (992px and up) */
-@media (min-width: 992px) {
-    .see-center-card {
-        width: 600px;
-        height: 180px;
-    }
-    
-    .see-center-title {
-        font-size: 32px;
-        width: 400px;
-        height: 32px;
-        top: 35px;
-    }
-    
-    .see-center-description {
-        font-size: 20px;
-        width: 500px;
-        height: 20px;
-        top: 80px;
-    }
-    
-    .see-center-btn {
-        width: 320px;
-        height: 45px;
-        font-size: 20px;
-        bottom: 25px;
-    }
-}
-
 .faq-list {
     max-width: 800px;
     margin: 0 auto;
@@ -1071,23 +1167,185 @@ textarea:focus {
     text-align: center;
 }
 
+/* ===== WHY CHOOSE US SECTION ===== */
+/* Why Choose Us section with three feature cards */
+
+/* Why Choose Us section container */
+.why-choose-us-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--main-bg);
+}
+
+/* Why Choose Us section title */
+.why-choose-us-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.2;
+}
+
+/* Why Choose Us cards container */
+.why-choose-us-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 313px;
+    margin: 0 auto;
+}
+
+/* Individual Why Choose Us card */
+.why-choose-us-card {
+    background-color: var(--light);
+    border: 1px solid #B3B3B3;
+    border-radius: 0;
+    padding: var(--spacing-md);
+    transition: transform 0.3s ease;
+    height: 220px; /* Increased from 180px to accommodate content */
+    width: 313px;
+}
+
+/* Why Choose Us card hover effect */
+.why-choose-us-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Why Choose Us card content container */
+.why-choose-us-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    height: calc(100% - 48px); /* Account for icon space */
+    padding: 0;
+    justify-content: space-between;
+}
+
+/* Why Choose Us icon container */
+.why-choose-us-icon {
+    height: 48px; /* Fixed height for consistent layout */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Why Choose Us card title */
+.why-choose-us-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.2;
+}
+
+/* Why Choose Us card text */
+.why-choose-us-card-text {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+/* Responsive adjustments for Why Choose Us section - Tablet */
+@media (min-width: 768px) {
+    /* Why Choose Us section - tablet layout */
+    .why-choose-us-section {
+        height: 350px; /* As per Figma design */
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .why-choose-us-section .container {
+        max-width: 802px; /* 33.15234375 + 768.84765625 = 802px total width */
+        width: 100%;
+        padding: 0 33px; /* Side padding as per Figma */
+    }
+    
+    /* Why Choose Us title - tablet */
+    .why-choose-us-title {
+        font-size: 2.5rem; /* Larger for tablet */
+        margin-bottom: 45px; /* 770 - 725 = 45px gap */
+        width: 523px; /* As per Figma */
+        height: 43px; /* As per Figma */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Why Choose Us cards layout for tablet */
+    .why-choose-us-cards {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 769px; /* As per Figma total cards width */
+        gap: 17px; /* Calculated gap between cards */
+        margin: 0 auto;
+    }
+    
+    /* Why Choose Us card - tablet dimensions */
+    .why-choose-us-card {
+        width: 245px; /* As per Figma */
+        height: 262px; /* As per Figma */
+        flex: none;
+        background-color: rgba(255, 255, 255, 0.75); /* 75% opacity white as per Figma */
+        padding: 17px; /* Adjusted padding for tablet */
+    }
+    
+    /* Why Choose Us icon - tablet positioning */
+    .why-choose-us-icon {
+        height: 38px; /* Icon area height */
+        margin-bottom: 30px; /* Gap between icon and title */
+    }
+    
+    .why-choose-us-icon svg {
+        width: 38px; /* Larger icon size for tablet */
+        height: 38px;
+        color: var(--main-color); /* Green color as per Figma */
+    }
+    
+    /* Why Choose Us content area - tablet */
+    .why-choose-us-content {
+        height: calc(100% - 68px); /* Account for icon and spacing */
+        padding: 0;
+    }
+    
+    /* Why Choose Us card title - tablet */
+    .why-choose-us-card-title {
+        font-size: 1.5rem; /* Larger for tablet */
+        margin-bottom: 18px; /* Gap between title and description */
+        line-height: 1.2;
+    }
+    
+    /* Why Choose Us card text - tablet */
+    .why-choose-us-card-text {
+        font-size: 1rem; /* Larger text for tablet */
+        line-height: 1.5;
+        opacity: 1; /* Full opacity on tablet */
+    }
+}
+
 /* ===== USP SECTION ===== */
 /* Unique Selling Proposition cards section */
 
 /* USP section container */
 .usp-section {
-    padding: 40px 0;
-    background-color: var(--main-bg); /* #ECECEC */
+    padding: var(--spacing-xl) 0;
+    background-color: var(--main-bg);
 }
 
 /* USP section title */
 .usp-title {
-    font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 28px;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
+    color: var(--dark);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: var(--spacing-xl);
     line-height: 1.2;
 }
 
@@ -1095,19 +1353,20 @@ textarea:focus {
 .usp-cards {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--spacing-md);
     max-width: 313px; /* As per Figma design */
     margin: 0 auto;
 }
 
 /* Individual USP card */
 .usp-card {
-    background-color: var(--light); /* #FFFFFF */
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--light);
+    border: 1px solid #B3B3B3; /* Gray border as per Figma */
+    border-radius: 0; /* No border radius as per Figma */
+    padding: var(--spacing-md);
     transition: transform 0.3s ease;
     height: 180px; /* As per Figma design */
+    width: 313px; /* As per Figma design */
 }
 
 /* USP card hover effect */
@@ -1119,45 +1378,41 @@ textarea:focus {
 .usp-card-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
     height: 100%;
-    justify-content: center;
+    padding: var(--spacing-sm);
 }
 
 /* USP icon container */
 .usp-icon {
-    width: 37px;
-    height: 37px;
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-md);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 /* USP icon image */
 .icon-img {
-    width: 100%;
-    height: 100%;
-    filter: var(--main-color-filter); /* Apply main color filter */
+    filter: none; /* Remove filter to show original green color from SVG */
 }
 
 /* USP card title */
 .usp-card-title {
-    font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 20px;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
-    margin-bottom: 10px;
+    color: var(--dark);
+    margin-bottom: var(--spacing-sm);
     line-height: 1.2;
 }
 
 /* USP card text */
 .usp-card-text {
-    font-family: var(--font-body); /* Adamina */
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
+    color: var(--dark);
     line-height: 1.4;
     opacity: 0.8;
 }
@@ -1174,7 +1429,7 @@ textarea:focus {
         justify-content: center;
         gap: 30px;
     }
-
+    
     /* USP card width for larger screens */
     .usp-card {
         flex: 1;
@@ -1283,8 +1538,8 @@ textarea:focus {
 
 /* Programs section container */
 .popular-programs-section {
-    padding: 40px 0;
-    background-color: var(--main-bg); /* #ECECEC */
+    padding: var(--spacing-xl) 0;
+    background-color: var(--main-bg);
 }
 
 /* Programs header with title and see more link */
@@ -1292,51 +1547,69 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
-    padding: 0 20px;
+    margin-bottom: var(--spacing-xl);
+    max-width: 313px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Programs section title */
 .programs-title {
-    font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 28px;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
+    color: var(--dark);
     line-height: 1.2;
+    white-space: nowrap; /* Keep title on one line */
 }
 
 /* See more link styling */
 .see-more-link {
-    font-family: var(--font-body); /* Adamina */
-    font-size: 16px;
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
+    color: var(--dark);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 /* See more link hover effect */
 .see-more-link:hover {
-    color: var(--main-color); /* #AAE83E */
+    color: var(--main-color);
+}
+
+/* See more link at bottom */
+.see-more-link-bottom {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.see-more-link-bottom:hover {
+    color: var(--main-color);
 }
 
 /* Programs cards container */
 .programs-cards {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--spacing-md);
     max-width: 313px; /* As per Figma design */
     margin: 0 auto;
 }
 
 /* Individual program card */
 .program-card {
-    background-color: var(--light); /* #FFFFFF */
-    border-radius: 12px;
+    background-color: var(--light);
+    border: 1px solid #B3B3B3; /* Gray border as per Figma */
+    border-radius: 22px; /* As per Figma */
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    height: 311px; /* As per Figma design */
+    height: 350px; /* Increased height to accommodate content better */
+    width: 313px; /* As per Figma design */
 }
 
 /* Program card hover effect */
@@ -1348,20 +1621,20 @@ textarea:focus {
 .program-image-container {
     height: 187px; /* As per Figma design */
     overflow: hidden;
-    border-radius: 12px 12px 0 0;
+    border-radius: 22px 22px 0 0; /* Match card border radius */
 }
 
 /* Program image styling */
 .program-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: fill; /* As per Figma scaleMode: FILL */
     object-position: center;
 }
 
 /* Program content area */
 .program-content {
-    padding: 20px;
+    padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
     height: calc(100% - 187px);
@@ -1370,22 +1643,22 @@ textarea:focus {
 
 /* Program title */
 .program-title {
-    font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 20px;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
-    margin-bottom: 8px;
+    color: var(--dark);
+    margin-bottom: var(--spacing-xs);
     line-height: 1.2;
 }
 
 /* Program description */
 .program-description {
-    font-family: var(--font-body); /* Adamina */
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: 1rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
+    color: var(--dark);
     opacity: 0.8;
-    margin-bottom: 15px;
+    margin-bottom: var(--spacing-sm);
     line-height: 1.4;
 }
 
@@ -1398,53 +1671,343 @@ textarea:focus {
 
 /* Program price */
 .program-price {
-    font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 18px;
+    font-family: var(--font-heading);
+    font-size: 1.1875rem;
     font-weight: 400;
-    color: var(--dark); /* #000000 */
+    color: var(--dark);
 }
 
-/* Program button */
-.program-btn {
-    font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 14px;
+/* Program button - Details button */
+.btn-details {
+    background: var(--main-color);
+    border: none;
+    color: var(--dark);
+    font-family: var(--font-body);
+    font-size: 1rem;
     font-weight: 400;
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 11px 24px;
+    border-radius: 22px;
     text-decoration: none;
     transition: all 0.3s ease;
-    min-width: 80px;
+    width: 146px;
+    height: 40px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Program button hover effect */
-.program-btn:hover {
+.btn-details:hover {
+    background: var(--main-color);
+    color: var(--dark);
     transform: translateY(-1px);
+    filter: brightness(1.1);
 }
 
 /* ===== RESPONSIVE DESIGN FOR PROGRAMS ===== */
 
 /* Medium screens and up (768px+) */
 @media (min-width: 768px) {
-    /* Programs header layout for larger screens */
+    /* Popular Programs section - tablet layout */
+    .popular-programs-section {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--main-bg);
+    }
+    
+    .popular-programs-section .container {
+        width: 80%; /* Apply 80% width rule */
+        margin: 0 auto;
+    }
+    
+    /* Programs header layout for tablet */
     .programs-header {
-        max-width: 1200px;
-        margin: 0 auto 30px;
-        padding: 0;
-    }
-
-    /* Programs cards layout for larger screens */
-    .programs-cards {
-        flex-direction: row;
-        max-width: none;
+        width: 80%; /* Apply 80% width rule */
+        margin: 0 auto;
         justify-content: center;
-        gap: 30px;
+        margin-bottom: 16px; /* Gap between title and first cards row */
     }
-
-    /* Program card width for larger screens */
+    
+    /* Section title for tablet */
+    .programs-title {
+        font-family: var(--font-heading);
+        font-size: 2.5rem; /* Larger for tablet following design pattern */
+        font-weight: 400;
+        color: var(--dark);
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap; /* Keep title on one line */
+        width: 270px; /* As per Figma */
+        height: 43px; /* As per Figma */
+    }
+    
+    /* Remove see more link from header on tablet */
+    .programs-header .see-more-link {
+        display: none;
+    }
+    
+    /* Programs cards layout - 2x2 grid for tablet (all 4 cards) */
+    .programs-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-rows: 1fr 1fr; /* Two equal rows */
+        gap: 20px 21px; /* Row gap, Column gap calculated from Figma positions */
+        width: 80%; /* Apply 80% width rule */
+        margin: 0 auto;
+        justify-content: center;
+    }
+    
+    /* Show all cards on tablet in 2x2 grid */
+    .program-card:nth-child(1) { grid-column: 1; grid-row: 1; } /* Swimming Lessons */
+    .program-card:nth-child(2) { grid-column: 2; grid-row: 1; } /* Yoga Classes */
+    .program-card:nth-child(3) { grid-column: 1; grid-row: 2; } /* Basketball League */
+    .program-card:nth-child(4) { grid-column: 2; grid-row: 2; } /* Senior Fitness */
+    
+    /* Program card dimensions for tablet */
     .program-card {
-        flex: 1;
-        max-width: 313px; /* As per Figma design */
+        background-color: var(--light);
+        border: 1px solid #B3B3B3; /* Gray border as per Figma */
+        border-radius: 22px; /* As per Figma */
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        width: 366.55px; /* As per Figma design */
+        height: 436.6px; /* As per Figma design */
+        flex: none; /* Remove flex to maintain fixed dimensions */
+    }
+    
+    /* Program image container for tablet */
+    .program-image-container {
+        height: 243px; /* As per Figma design */
+        overflow: hidden;
+        border-radius: 22px 22px 0 0;
+    }
+    
+    /* Program content area for tablet */
+    .program-content {
+        padding: 29px; /* Adjusted padding for tablet */
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 243px);
+        justify-content: space-between;
+    }
+    
+    /* Program title for tablet */
+    .program-title {
+        font-family: var(--font-heading);
+        font-size: 1.375rem; /* Slightly larger for tablet */
+        font-weight: 400;
+        color: var(--dark);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.2;
+    }
+    
+    /* Program description for tablet */
+    .program-description {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark);
+        opacity: 0.8;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.4;
+    }
+    
+    /* Program footer for tablet */
+    .program-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+    
+    /* Program price for tablet */
+    .program-price {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--dark);
+    }
+    
+    /* Details button for tablet */
+    .btn-details {
+        background: var(--main-color);
+        border: none;
+        color: var(--dark);
+        padding: 8px 24px;
+        border-radius: 22px;
+        font-family: var(--font-body);
+        font-weight: 400;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: 146px; /* As per Figma */
+        height: 40px; /* As per Figma */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
+
+/* Large screens and up (992px+) - Desktop */
+@media (min-width: 992px) {
+    /* Popular Programs section - desktop layout */
+    .popular-programs-section {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--main-bg);
+    }
+    
+    .popular-programs-section .container {
+        width: 80%; /* Apply 80% width rule */
+        max-width: 1444px; /* Total width: 82px + 1279.52px + 82px ≈ 1444px */
+        margin: 0 auto;
+        padding: 0 82px; /* Side margins as per Figma */
+    }
+    
+    /* Programs header layout for desktop */
+    .programs-header {
+        width: 80%; /* Apply 80% width rule */
+        max-width: 290px; /* Title width as per Figma */
+        margin: 0 auto;
+        justify-content: center;
+        margin-bottom: 31px; /* Gap between title and cards (1499 - 1468 = 31px) */
+    }
+    
+    /* Section title for desktop */
+    .programs-title {
+        font-family: var(--font-heading);
+        font-size: 2.75rem; /* Larger for desktop */
+        font-weight: 400;
+        color: var(--dark);
+        line-height: 1.2;
+        text-align: center;
+        white-space: nowrap; /* Keep title on one line */
+        width: 290px; /* As per Figma */
+        height: 46px; /* As per Figma */
+    }
+    
+    /* Programs cards layout - 4 cards in a single row for desktop */
+    .programs-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 306.52px); /* Four columns with exact card widths */
+        grid-template-rows: 436.6px; /* Single row with exact card height */
+        gap: 0 22px; /* Column gap calculated from Figma positions */
+        width: 80%; /* Apply 80% width rule */
+        max-width: 1279.52px; /* Total cards area width: (306.52 * 4) + (22 * 3) ≈ 1292px */
+        margin: 0 auto;
+        justify-content: center;
+    }
+    
+    /* Program card dimensions for desktop */
+    .program-card {
+        background-color: var(--light);
+        border: 2px solid #B3B3B3; /* 2px border as per Figma */
+        border-radius: 22px; /* As per Figma */
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        width: 306.52px; /* As per Figma design */
+        height: 436.6px; /* As per Figma design */
+        margin-bottom: 0; /* Remove bottom margin for desktop grid */
+    }
+    
+    /* Program image container for desktop */
+    .program-image-container {
+        height: 243px; /* As per Figma design */
+        overflow: hidden;
+        border-radius: 22px 22px 0 0;
+    }
+    
+    /* Program content area for desktop */
+    .program-content {
+        padding: 29px; /* Consistent padding for desktop */
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 243px);
+        justify-content: space-between;
+    }
+    
+    /* Program title for desktop */
+    .program-title {
+        font-family: var(--font-heading);
+        font-size: 1.5rem; /* Larger for desktop */
+        font-weight: 400;
+        color: var(--dark);
+        margin-bottom: var(--spacing-sm);
+        line-height: 1.2;
+    }
+    
+    /* Program description for desktop */
+    .program-description {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark);
+        opacity: 0.8;
+        margin-bottom: var(--spacing-md);
+        line-height: 1.4;
+    }
+    
+    /* Program price for desktop */
+    .program-price {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--dark);
+    }
+    
+    /* Details button for desktop */
+    .btn-details {
+        background: var(--main-color);
+        border: none;
+        color: var(--dark);
+        padding: 0;
+        border-radius: 22px;
+        font-family: var(--font-body);
+        font-weight: 400;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        width: 146px; /* As per Figma */
+        height: 40px; /* As per Figma */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    
+    /* Testimonials section - desktop layout */
+    .testimonials-section {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--main-bg);
+    }
+    
+    .testimonials-section .container {
+        width: 80%; /* Apply 80% width rule */
+        margin: 0 auto;
+    }
+    
+    /* Testimonials title for desktop */
+    .testimonials-title {
+        font-size: 2.75rem; /* Larger for desktop */
+        margin-bottom: var(--spacing-xl);
+        white-space: nowrap;
+    }
+    
+    /* Testimonials cards layout - 3 cards in a row for desktop */
+    .testimonials-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+        gap: 0 30px; /* Column gap between cards */
+        width: 80%; /* Apply 80% width rule */
+        max-width: 1280px; /* Total cards area width as per Figma */
+        margin: 0 auto;
+        justify-content: center;
+    }
+    
+    /* Testimonial card dimensions for desktop */
+    .testimonial-card {
+        width: 100%;
+        max-width: 358px; /* Based on Figma dimensions */
+        margin: 0 auto;
     }
 }
 
@@ -1453,37 +2016,41 @@ textarea:focus {
 
 /* Testimonials section container */
 .testimonials-section {
-    padding: 40px 0;
+    padding: var(--spacing-xl) 0;
     background-color: var(--main-bg); /* #ECECEC */
 }
 
 /* Testimonials section title */
 .testimonials-title {
     font-family: var(--font-heading); /* Abril Fatface */
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 400;
     color: var(--dark); /* #000000 */
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: var(--spacing-xl);
     line-height: 1.2;
+    white-space: nowrap; /* Keep title on one line */
 }
 
 /* Testimonials cards container */
 .testimonials-cards {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 313px; /* As per Figma design */
+    gap: var(--spacing-lg);
+    width: 80%; /* Apply 80% width rule */
     margin: 0 auto;
 }
 
 /* Individual testimonial card */
 .testimonial-card {
-    background-color: var(--light); /* #FFFFFF */
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 358px; /* Based on Figma dimensions */
+    margin: 0 auto;
 }
 
 /* Testimonial card hover effect */
@@ -1491,11 +2058,30 @@ textarea:focus {
     transform: translateY(-2px);
 }
 
+/* Member image container */
+.member-image-container {
+    width: 269px; /* As per Figma */
+    height: 269px; /* As per Figma */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Member image styling */
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 /* Testimonial content layout */
 .testimonial-content {
     display: flex;
-    gap: 15px;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
 
 /* Testimonial avatar container */
@@ -1615,18 +2201,18 @@ textarea:focus {
         justify-content: center;
         gap: 30px;
     }
-
+    
     /* Testimonial card width for larger screens */
     .testimonial-card {
         flex: 1;
         max-width: 313px; /* As per Figma design */
     }
-
+    
     /* Show hidden cards on larger screens */
     .hidden-card {
         display: block;
     }
-
+    
     /* Hide see more button on larger screens */
     .testimonials-footer {
         display: none;
@@ -1673,14 +2259,14 @@ textarea:focus {
         background-color: transparent;
         box-shadow: none;
     }
-
+    
     /* Desktop navigation links */
     .navbar-nav {
         padding: 0;
         flex-direction: row;
         gap: 30px;
     }
-
+    
     /* Desktop navigation link styling */
     .nav-link {
         font-size: 18px;
@@ -1696,17 +2282,17 @@ textarea:focus {
         max-width: 1200px;
         margin: 0 auto;
     }
-
+    
     /* Main content padding for larger screens */
     .main-content {
         padding: 60px 40px;
     }
-
+    
     /* Main content headings for larger screens */
     .main-content h1 {
         font-size: 40px;
     }
-
+    
     /* Menu overlay for mobile */
     .menu-overlay {
         display: none;
