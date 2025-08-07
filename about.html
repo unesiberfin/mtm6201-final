@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - RecCenter | Your Fitness Journey Starts Here</title>
+    <meta name="description" content="Learn about RecCenter's mission, our state-of-the-art facilities, expert trainers, and commitment to helping you achieve your fitness goals.">
+    
+    <!-- Google Fonts - Abril Fatface for headings, Adamina for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Adamina&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5.3.0 for responsive grid and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS files -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="about-page">
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link sr-only sr-only-focusable">Skip to main content</a>
+    
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <!-- Logo container -->
+            <a class="navbar-brand d-flex align-items-center" href="home.html" aria-label="RecCenter Home">
+                <img src="images/logo.gif" alt="RecCenter Logo" class="logo-img" width="63" height="51">
+            </a>
+            
+            <!-- Bootstrap native hamburger menu button -->
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Bootstrap native collapse menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html" aria-label="Go to home page">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html" aria-current="page" aria-label="Current page: About us">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="membership.html" aria-label="Go to membership page">MEMBERSHIP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" aria-label="Classes and schedules (coming soon)">CLASSES & SCHEDULES</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content wrapper -->
+    <main id="main-content" role="main" class="pt-5">
+        <!-- ===== HERO SECTION ===== -->
+        <section class="hero-section position-relative overflow-hidden" aria-labelledby="hero-title">
+            <div class="hero-background position-absolute w-100 h-100">
+                <img src="images/about-banner.jpg" 
+                     alt="Modern fitness center with people working out on various equipment" 
+                     class="hero-bg-image w-100 h-100 object-fit-cover">
+            </div>
+            
+            <!-- Hero content overlay -->
+            <div class="hero-content position-relative d-flex align-items-center min-vh-50">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8 text-center">
+                            <!-- Main hero title -->
+                            <h1 id="hero-title" class="hero-title text-white mb-3">About Our Recreation Center</h1>
+                            
+                            <!-- Hero description -->
+                            <p class="hero-description text-white fs-5">Dedicated to promoting health, wellness, and community engagement through quality recreational programs and facilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== OUR STORY SECTION ===== -->
+        <section class="our-story-section py-5" aria-labelledby="story-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <!-- Section title -->
+                        <h2 id="story-title" class="story-title text-center mb-4">Our Story</h2>
+                        
+                        <!-- Story description -->
+                        <div class="story-description">
+                            <p class="text-center fs-6 lh-base">Founded in 1985, our recreation center has been serving the community for over 40 years. What started as a small facility with basic amenities has grown into a comprehensive center offering diverse programs for all ages. Our mission is to enhance the quality of life for all community members by providing accessible, affordable, and high-quality recreational opportunities that promote physical and mental well-being. We believe in fostering a sense of community and belonging, where everyone feels welcome regardless of age, ability, or background.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== OUR FACILITIES SECTION ===== -->
+        <section class="our-facilities-section py-5 bg-light" aria-labelledby="facilities-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Section title -->
+                        <h2 id="facilities-title" class="facilities-title text-center mb-5">Our Facilities</h2>
+                        
+                        <!-- Facilities cards container -->
+                        <div class="row g-4" role="list" aria-label="Our facilities">
+                            <!-- Aquatic Center Card -->
+                            <div class="col-12 col-md-6" role="listitem">
+                                <div class="facility-card card h-100 shadow-sm border-0">
+                                    <div class="facility-image">
+                                        <img src="images/aquatic-center.jpg" 
+                                             alt="Olympic-sized swimming pool with clear blue water" 
+                                             class="facility-img card-img-top">
+                                    </div>
+                                    <div class="facility-content card-body">
+                                        <h3 class="facility-name card-title">Aquatic Center</h3>
+                                        <p class="facility-description card-text">Olympic-sized swimming pool, water slide, kiddie pool, and hot tub. Perfect for swimmers of all ages and abilities.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fitness Center Card -->
+                            <div class="col-12 col-md-6" role="listitem">
+                                <div class="facility-card card h-100 shadow-sm border-0">
+                                    <div class="facility-image">
+                                        <img src="images/fitness-center.jpg" 
+                                             alt="Modern fitness center with state-of-the-art equipment" 
+                                             class="facility-img card-img-top">
+                                    </div>
+                                    <div class="facility-content card-body">
+                                        <h3 class="facility-name card-title">Fitness Center</h3>
+                                        <p class="facility-description card-text">State-of-the-art cardio and strength equipment, free weights area, and dedicated functional training space.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MEET OUR TEAM SECTION ===== -->
+        <section class="meet-our-team-section py-5" aria-labelledby="team-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Section title -->
+                        <h2 id="team-title" class="team-title text-center mb-5">Meet Our Team</h2>
+                        
+                        <!-- Team cards container -->
+                        <div class="row g-4" role="list" aria-label="Our team members">
+                            <!-- Team Member 1: Robert Wilson -->
+                            <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                                <div class="team-card card h-100 border-0 shadow-sm text-center">
+                                    <div class="team-photo mx-auto mt-3">
+                                        <img src="images/robert-wilson.jpg" 
+                                             alt="Robert Wilson, Center Director" 
+                                             class="team-img rounded-circle">
+                                    </div>
+                                    <div class="team-info card-body">
+                                        <h3 class="team-name card-title">Robert Wilson</h3>
+                                        <p class="team-role card-text text-muted">Center Director</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Team Member 2: Jennifer Martinez -->
+                            <div class="col-12 col-sm-6 col-lg-3" role="listitem">
+                                <div class="team-card card h-100 border-0 shadow-sm text-center">
+                                    <div class="team-photo mx-auto mt-3">
+                                        <img src="images/jennifer-martinez.jpg" 
+                                             alt="Jennifer Martinez, Fitness Manager" 
+                                             class="team-img rounded-circle">
+                                    </div>
+                                    <div class="team-info card-body">
+                                        <h3 class="team-name card-title">Jennifer Martinez</h3>
+                                        <p class="team-role card-text text-muted">Fitness Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Team Member 3: David Chen (Hidden by default) -->
+                            <div class="col-12 col-sm-6 col-lg-3 hidden-team-card" role="listitem" aria-hidden="true">
+                                <div class="team-card card h-100 border-0 shadow-sm text-center">
+                                    <div class="team-photo mx-auto mt-3">
+                                        <img src="images/david-chen.jpg" 
+                                             alt="David Chen, Aquatics Director" 
+                                             class="team-img rounded-circle">
+                                    </div>
+                                    <div class="team-info card-body">
+                                        <h3 class="team-name card-title">David Chen</h3>
+                                        <p class="team-role card-text text-muted">Aquatics Director</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Team Member 4: Michelle Johnson (Hidden by default) -->
+                            <div class="col-12 col-sm-6 col-lg-3 hidden-team-card" role="listitem" aria-hidden="true">
+                                <div class="team-card card h-100 border-0 shadow-sm text-center">
+                                    <div class="team-photo mx-auto mt-3">
+                                        <img src="images/michelle-johnson.jpg" 
+                                             alt="Michelle Johnson, Youth Programs Coordinator" 
+                                             class="team-img rounded-circle">
+                                    </div>
+                                    <div class="team-info card-body">
+                                        <h3 class="team-name card-title">Michelle Johnson</h3>
+                                        <p class="team-role card-text text-muted">Youth Programs Coordinator</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- See More button to show additional team members -->
+                        <div class="team-footer text-center mt-4">
+                            <button class="btn btn-outline-dark see-more-team" 
+                                    id="seeMoreTeam"
+                                    aria-expanded="false"
+                                    aria-controls="team-cards">
+                                See all >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA SECTION ===== -->
+        <section class="cta-bottom-section py-5 bg-primary" aria-labelledby="cta-bottom-title">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6 text-center">
+                        <div class="cta-bottom-card">
+                            <h2 id="cta-bottom-title" class="cta-bottom-title text-white mb-3">Ready to Get Started?</h2>
+                            <p class="cta-bottom-description text-white mb-4">Join Our community today and transform your life.</p>
+                            <div class="cta-bottom-button">
+                                <a href="membership.html" class="btn btn-light btn-lg cta-bottom-btn" role="button" aria-label="Become a member">Become a Member</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with contact information and social links -->
+    <footer class="bg-dark text-white py-4" role="contentinfo" aria-label="Site footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6">
+                    <div class="footer-brand">
+                        <p class="footer-company-name mb-2">JoinIn Recreation Centers</p>
+                        <div class="footer-social-links d-flex gap-3" role="list" aria-label="Social media links">
+                            <a href="#" class="social-link text-white text-decoration-none" role="listitem" aria-label="Visit our Facebook page">
+                                <img src="images/Icons8/icons8-facebook-50.svg" alt="" aria-hidden="true" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link text-white text-decoration-none" role="listitem" aria-label="Visit our Instagram page">
+                                <img src="images/Icons8/icons8-instagram-50.svg" alt="" aria-hidden="true" width="24" height="24">
+                            </a>
+                            <a href="#" class="social-link text-white text-decoration-none" role="listitem" aria-label="Contact us on WhatsApp">
+                                <img src="images/Icons8/icons8-whatsapp-50.svg" alt="" aria-hidden="true" width="24" height="24">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="footer-credit text-center text-md-end">
+                        <div class="footer-divider d-none d-md-block"></div>
+                        <p class="footer-copyright mb-0">© 2025 JoinIn Recreation Centers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript for team functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const seeMoreButton = document.getElementById('seeMoreTeam');
+            const hiddenCards = document.querySelectorAll('.hidden-team-card');
+            let isExpanded = false;
+
+            if (seeMoreButton && hiddenCards.length > 0) {
+                seeMoreButton.addEventListener('click', function() {
+                    isExpanded = !isExpanded;
+                    
+                    hiddenCards.forEach(card => {
+                        if (isExpanded) {
+                            card.classList.remove('hidden-team-card');
+                            card.classList.add('show-team-card');
+                            card.setAttribute('aria-hidden', 'false');
+                        } else {
+                            card.classList.add('hidden-team-card');
+                            card.classList.remove('show-team-card');
+                            card.setAttribute('aria-hidden', 'true');
+                        }
+                    });
+                    
+                    seeMoreButton.setAttribute('aria-expanded', isExpanded.toString());
+                    seeMoreButton.textContent = isExpanded ? 'See less' : 'See all >';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
