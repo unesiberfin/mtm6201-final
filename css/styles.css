@@ -404,20 +404,124 @@ textarea:focus {
 
 /* Desktop styles (992px and up) */
 @media (min-width: 992px) {
+    /* Desktop hero section layout */
     .hero-section {
-        height: 400px;
-        max-width: 1200px;
+        height: 659px; /* As per Figma design */
+        max-width: 1440px; /* Full desktop width */
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
     }
     
+    .hero-section .container {
+        max-width: 1286px; /* Content area width as per Figma */
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 76px; /* Side padding as per Figma */
+    }
+    
+    .hero-section .row {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+    
+    .hero-section .col-12 {
+        display: grid;
+        grid-template-columns: 1fr 659px; /* Content area + image width from Figma */
+        gap: 40px; /* Gap between content and image */
+        align-items: center;
+        padding: 0;
+        height: 100%;
+    }
+    
+    /* Hero banner - right side */
+    .hero-banner {
+        order: 2;
+        width: 659px; /* As per Figma */
+        height: 659px; /* As per Figma - square image */
+        margin: 0;
+        border-radius: 0; /* No border radius for desktop */
+        overflow: hidden;
+        grid-column: 2;
+    }
+    
+    .hero-banner-image {
+        width: 100%;
+        height: 100%;
+        object-fit: fill; /* Fill as per Figma scaleMode */
+        object-position: center;
+    }
+    
+    /* Hero content area - reorder content for desktop */
     .hero-title {
-        font-size: 48px;
-        max-width: 700px;
-        margin-bottom: 30px;
+        order: 2; /* Title comes after image in HTML, but shows first in desktop */
+        grid-column: 1;
+        grid-row: 1;
     }
     
     .hero-description {
-        font-size: 20px;
-        max-width: 800px;
+        order: 3; /* Description comes after title */
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .hero-buttons {
+        order: 4; /* Buttons come last */
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .hero-title {
+        font-size: 4rem; /* Large desktop title */
+        max-width: 630px; /* As per Figma */
+        margin-bottom: 50px; /* Space between title and description */
+        line-height: 1.1;
+        text-align: left;
+    }
+    
+    .hero-description {
+        display: block;
+        font-size: 1.5rem; /* Larger description for desktop */
+        max-width: 574px; /* As per Figma */
+        margin-bottom: 50px; /* Space before buttons */
+        line-height: 1.4;
+        text-align: left;
+        color: var(--dark);
+    }
+    
+    /* Hero buttons - side by side for desktop */
+    .hero-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 23px; /* Gap between buttons as per Figma */
+        justify-content: flex-start;
+        width: auto;
+    }
+    
+    .hero-buttons .btn-primary-custom {
+        width: 304px; /* As per Figma */
+        height: 60px; /* As per Figma */
+        font-size: 1.25rem;
+        margin-bottom: 0;
+    }
+    
+    .hero-buttons .btn-secondary-custom {
+        width: 229px; /* As per Figma */
+        height: 66px; /* As per Figma */
+        font-size: 1.25rem;
+        background-color: transparent;
+        color: white;
+        border: 1px solid var(--dark);
+        border-radius: 26px; /* As per Figma */
+        margin-bottom: 0;
+    }
+    
+    .hero-buttons .btn-secondary-custom:hover {
+        background-color: var(--dark);
+        color: white;
     }
 }
 
@@ -455,6 +559,12 @@ textarea:focus {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
+}
+
+/* Ensure home page hero content doesn't affect about page */
+.home-page .hero-content {
+    align-items: center;
+    justify-content: center;
 }
 
 /* Hero description styling - kept for other pages */
@@ -1540,17 +1650,19 @@ textarea:focus {
 .popular-programs-section {
     padding: var(--spacing-xl) 0;
     background-color: var(--main-bg);
+    text-align: center; /* Center align the entire section */
 }
 
 /* Programs header with title and see more link */
 .programs-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the header content */
     align-items: center;
     margin-bottom: var(--spacing-xl);
     max-width: 313px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 
 /* Programs section title */
@@ -1599,6 +1711,7 @@ textarea:focus {
     gap: var(--spacing-md);
     max-width: 313px; /* As per Figma design */
     margin: 0 auto;
+    text-align: left; /* Reset text alignment for card content */
 }
 
 /* Individual program card */
@@ -1978,11 +2091,14 @@ textarea:focus {
     .testimonials-section {
         padding: var(--spacing-xl) 0;
         background-color: var(--main-bg);
+        height: auto; /* Reset height for desktop */
+        display: block; /* Reset display for desktop */
     }
     
     .testimonials-section .container {
         width: 80%; /* Apply 80% width rule */
         margin: 0 auto;
+        position: static; /* Reset position for desktop */
     }
     
     /* Testimonials title for desktop */
@@ -1990,6 +2106,8 @@ textarea:focus {
         font-size: 2.75rem; /* Larger for desktop */
         margin-bottom: var(--spacing-xl);
         white-space: nowrap;
+        width: auto; /* Reset width for desktop */
+        height: auto; /* Reset height for desktop */
     }
     
     /* Testimonials cards layout - 3 cards in a row for desktop */
@@ -2001,13 +2119,115 @@ textarea:focus {
         max-width: 1280px; /* Total cards area width as per Figma */
         margin: 0 auto;
         justify-content: center;
+        position: static; /* Reset position for desktop */
+        height: auto; /* Reset height for desktop */
     }
     
-    /* Testimonial card dimensions for desktop */
-    .testimonial-card {
-        width: 100%;
+    /* Reset testimonial card positioning for desktop */
+    .testimonial-card:nth-child(1),
+    .testimonial-card:nth-child(2),
+    .testimonial-card:nth-child(3) {
+        position: static; /* Reset position for desktop */
+        width: 100%; /* Reset width for desktop */
+        height: auto; /* Reset height for desktop */
         max-width: 358px; /* Based on Figma dimensions */
         margin: 0 auto;
+        top: auto;
+        left: auto;
+        right: auto;
+        transform: none; /* Reset transform for desktop */
+    }
+    
+    /* Reset member image container for desktop */
+    .member-image-container {
+        width: 269px; /* Keep Figma dimensions */
+        height: 269px; /* Keep Figma dimensions */
+        margin-bottom: var(--spacing-lg); /* Standard spacing for desktop */
+    }
+}
+
+/* Responsive adjustments for testimonials section - Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Testimonials section - tablet layout using Bootstrap grid */
+    .testimonials-section {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--main-bg);
+        min-height: 800px; /* Flexible height */
+    }
+    
+    .testimonials-section .container {
+        width: 80%; /* Apply 80% width rule for tablet */
+        margin: 0 auto;
+    }
+    
+    /* Testimonials title for tablet */
+    .testimonials-title {
+        font-size: 2.5rem; /* Larger for tablet */
+        margin-bottom: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    /* Testimonials cards layout - Bootstrap grid with 12 rows */
+    .testimonials-cards {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr); /* 12 column grid */
+        grid-template-rows: repeat(12, 1fr); /* 12 row grid */
+        gap: 20px;
+        min-height: 600px;
+        width: 100%;
+        margin: 0;
+    }
+    
+    /* Card 1 - Top left area (rows 1-6, columns 1-5) */
+    .testimonial-card:nth-child(1) {
+        grid-column: 1 / 6; /* Spans columns 1-5 */
+        grid-row: 1 / 7; /* Spans rows 1-6 */
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+    
+    /* Card 2 - Bottom right area (rows 7-12, columns 4-9) */
+    .testimonial-card:nth-child(2) {
+        grid-column: 4 / 9; /* Spans columns 4-8, overlaps with card 1 */
+        grid-row: 7 / 13; /* Spans rows 7-12 */
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+    
+    /* Card 3 - Right side center (rows 3-9, columns 8-12) */
+    .testimonial-card:nth-child(3) {
+        grid-column: 8 / 13; /* Spans columns 8-12 */
+        grid-row: 3 / 9; /* Spans rows 3-8 */
+        width: 100%;
+        height: auto;
+        max-width: none;
+    }
+    
+    /* Member image container for tablet */
+    .member-image-container {
+        width: 180px; /* Adjusted for grid layout */
+        height: 180px; /* Adjusted for grid layout */
+        margin-bottom: var(--spacing-md);
+    }
+    
+    /* Member name styling for tablet */
+    .member-name {
+        font-size: 1.25rem; /* Adjusted for grid layout */
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    /* Member since text for tablet */
+    .member-since {
+        font-size: 0.9rem; /* Adjusted for grid layout */
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    /* Testimonial text for tablet */
+    .testimonial-text {
+        font-size: 1rem; /* Adjusted for grid layout */
+        line-height: 1.4;
     }
 }
 
@@ -2253,25 +2473,116 @@ textarea:focus {
 
 /* Large screens and up (992px+) */
 @media (min-width: 992px) {
-    /* Desktop navbar layout */
+    /* Desktop navbar container */
+    .navbar {
+        height: 105px; /* As per Figma design */
+        background-color: white;
+        padding: 0;
+        box-shadow: none;
+    }
+    
+    .navbar .container-fluid {
+        max-width: 1440px; /* As per Figma design */
+        margin: 0 auto;
+        padding: 0 80px; /* Reduced padding for more logo space */
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    /* Desktop logo styling */
+    .navbar-brand {
+        width: 146px; /* As per Figma */
+        height: 110px; /* As per Figma */
+        margin: 0;
+        margin-right: 60px; /* Add space between logo and nav links */
+        padding: 0;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0; /* Prevent logo from shrinking */
+    }
+    
+    .navbar-brand img {
+        width: 100%;
+        height: 100%;
+        object-fit: crop;
+    }
+    
+    /* Desktop navigation collapse */
     .navbar-collapse {
         position: static;
         background-color: transparent;
         box-shadow: none;
+        flex-grow: 0;
+        margin: 0 auto;
     }
     
-    /* Desktop navigation links */
+    /* Desktop navigation links container */
     .navbar-nav {
         padding: 0;
         flex-direction: row;
-        gap: 30px;
+        gap: 40px; /* Reduced gap between nav items to save space */
+        margin: 0;
+        align-items: center;
     }
     
     /* Desktop navigation link styling */
     .nav-link {
-        font-size: 18px;
-        padding: 0 !important;
+        font-family: var(--font-body);
+        font-size: 1.25rem; /* 20px equivalent */
+        font-weight: 400;
+        color: var(--dark) !important;
+        padding: 8px 16px !important;
         border: none;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+    }
+    
+    /* Active navigation link */
+    .nav-link.active {
+        color: var(--dark) !important;
+        border-bottom: 3px solid var(--main-color); /* Green underline for active state */
+        border-radius: 0;
+        background-color: transparent;
+        font-weight: 600; /* Slightly bolder for active state */
+        padding-bottom: 5px !important; /* Adjust padding for underline */
+    }
+    
+    /* Navigation link hover effect */
+    .nav-link:hover {
+        color: var(--main-color) !important;
+        background-color: transparent;
+    }
+    
+    /* Desktop "Become a Member" button */
+    .navbar .btn-primary {
+        width: 304px; /* As per Figma */
+        height: 60px; /* As per Figma */
+        background-color: var(--main-color);
+        border: none;
+        border-radius: 22px; /* As per Figma */
+        font-family: var(--font-body);
+        font-size: 1.25rem; /* 20px equivalent */
+        font-weight: 400;
+        color: var(--dark);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar .btn-primary:hover {
+        background-color: rgba(139, 195, 74, 0.9);
+        transform: translateY(-1px);
+    }
+    
+    /* Hide mobile toggler on desktop */
+    .navbar-toggler {
+        display: none;
     }
 }
 
@@ -2462,15 +2773,18 @@ footer {
 } 
 
 /* ===== ABOUT PAGE HERO SECTION ===== */
-/* Hero section for about page - 271px height as per Figma design */
+/* Responsive hero section for about page */
 
+/* Mobile first - default styles */
 .about-page .hero-section {
     height: 271px;
     position: relative;
     overflow: hidden;
     margin-top: 73px; /* Account for fixed navbar */
-    width: 393px; /* Mobile width as per Figma */
-    max-width: 100%;
+    width: 100%;
+    max-width: 393px; /* Mobile width as per Figma */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .about-page .hero-background {
@@ -2485,56 +2799,135 @@ footer {
 .about-page .hero-bg-image {
     width: 100%;
     height: 100%;
-    object-fit: fill; /* As per Figma scaleMode: FILL */
+    object-fit: cover;
     object-position: center;
 }
 
-.about-page .hero-content {
-    position: relative;
-    z-index: 2;
+/* Dark overlay for better text readability */
+.about-page .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    display: flex;
-    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% black overlay as per Figma */
+    z-index: 2;
+}
+
+.about-page .hero-content {
+    position: relative !important;
+    z-index: 3;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     color: white;
-    padding: 0;
+    padding: var(--spacing-lg);
+    text-align: center !important;
 }
 
 .about-page .hero-title {
     font-family: var(--font-heading);
-    font-size: 32px;
+    font-size: 1.75rem; /* 28px equivalent */
     font-weight: 400;
     color: white;
-    margin: 0;
+    margin: 0 0 var(--spacing-md) 0;
     line-height: 1.2;
-    width: 248px;
-    height: 64px;
-    position: absolute;
-    top: 47px; /* 120px - 73px navbar offset */
-    left: 75px;
+    width: 100%;
+    max-width: 320px; /* Responsive width */
+    position: relative; /* Ensure no absolute positioning */
+    order: 1; /* Explicit order for mobile too */
 }
 
 .about-page .hero-description {
     font-family: var(--font-body);
-    font-size: 16px;
+    font-size: 0.875rem; /* 14px equivalent */
     font-weight: 400;
     color: white;
     line-height: 1.4;
-    width: 271px;
-    height: 55px;
+    width: 100%;
+    max-width: 300px; /* Responsive width */
     margin: 0;
-    position: absolute;
-    top: 115px; /* 188px - 73px navbar offset */
-    left: 62px;
+    position: relative; /* Ensure no absolute positioning */
+    order: 2; /* Explicit order for mobile too */
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .about-page .hero-section {
+        height: 374px; /* As per tablet Figma */
+        max-width: 835px; /* As per tablet Figma */
+        margin-top: 80px; /* Adjusted for tablet navbar */
+    }
+    
+    .about-page .hero-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .about-page .hero-title {
+        font-size: 2.5rem; /* Larger for tablet */
+        max-width: 542px; /* As per tablet Figma */
+        order: 1; /* Ensure title comes first */
+        margin-bottom: var(--spacing-md); /* Add space between elements */
+    }
+    
+    .about-page .hero-description {
+        font-size: 1rem; /* Larger for tablet */
+        max-width: 679px; /* As per tablet Figma */
+        order: 2; /* Ensure description comes second */
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+    .about-page .hero-section {
+        height: 527px; /* As per desktop Figma */
+        max-width: 1440px; /* As per desktop Figma */
+        margin-top: 90px; /* Adjusted for desktop navbar */
+    }
+    
+    /* Remove dark overlay for desktop - image has better contrast */
+    .about-page .hero-section::before {
+        display: none;
+    }
+    
+    .about-page .hero-content {
+        flex-direction: column !important; /* Force vertical stacking */
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .about-page .hero-title {
+        font-size: 3.5rem; /* Much larger for desktop */
+        max-width: 866px; /* As per desktop Figma */
+        color: white; /* White text on desktop */
+        order: 1; /* Ensure title comes first */
+        margin-bottom: var(--spacing-lg); /* Add space between title and description */
+    }
+    
+    .about-page .hero-description {
+        font-size: 1.25rem; /* Larger for desktop */
+        max-width: 971px; /* As per desktop Figma */
+        color: rgba(255, 255, 255, 0.8); /* White text with 80% opacity for better readability */
+        order: 2; /* Ensure description comes second */
+    }
 }
 
 /* ===== OUR STORY SECTION ===== */
 /* Story section for about page - 313px width as per Figma design */
 
 .our-story-section {
-    padding: 40px 20px;
+    padding: 40px 0;
     background-color: var(--light);
     margin-top: 33px; /* 377px - 344px (hero end) */
 }
+
 
 .story-title {
     font-family: var(--font-heading);
@@ -2543,12 +2936,10 @@ footer {
     color: var(--dark);
     text-align: center;
     margin-bottom: 15px;
-    line-height: 1.2;
+
     width: auto;
     height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    white-space: nowrap;
+
 }
 
 .story-description {
