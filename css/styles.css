@@ -2618,6 +2618,13 @@ textarea:focus {
     background-color: var(--main-bg);
 }
 
+.cta-bottom-section h2 {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+    color: var(--dark); /* Centered content width */
+}
+
 .cta-bottom-card {
     background-color: var(--light);
     border: 1px solid #B3B3B3; /* Light grey border as per Figma */
