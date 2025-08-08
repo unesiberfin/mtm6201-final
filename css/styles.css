@@ -3070,9 +3070,4 @@ footer {
   .hero-buttons {
     justify-content: flex-start; /* Align buttons to the left */
   }
-
-  /* Place the image on the right by default in LTR languages */
-  .hero-image-container {
-     /* The grid will handle the order */
-  }
 }
