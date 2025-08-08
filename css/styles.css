@@ -143,10 +143,8 @@ textarea:focus {
 .hero-section {
     padding: var(--spacing-lg) 0 0 0; /* Add top padding for better spacing */
     background: var(--main-bg);
-    margin-top: 73px; /* Account for fixed navbar */
-    width: 100vw; /* Full viewport width */
-    margin-left: 0;
-    margin-right: 0;
+    margin-top: 73px; 
+
 }
 
 /* Override container width for hero section */
@@ -160,11 +158,10 @@ textarea:focus {
 /* Hero banner container */
 .hero-banner {
     width: 393px;
-    height: 320px; /* Increased from 220.85px */
+    height: 320px; 
     max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: var(--radius-lg);
 }
 
 /* Hero banner image */
@@ -173,6 +170,7 @@ textarea:focus {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transform: scaleX(-1);
 }
 
 /* Hero title styling */
@@ -182,8 +180,6 @@ textarea:focus {
     color: var(--dark);
     line-height: 1.2;
     margin: var(--spacing-md) auto 0 auto;
-    width: 280px;
-    max-width: calc(100% - var(--spacing-xl) * 2);
     text-align: center;
 }
 
@@ -400,55 +396,38 @@ textarea:focus {
 /* Desktop styles (992px and up) */
 @media (min-width: 992px) {
     /* Desktop hero section layout */
-    .hero-section {
-        height: 659px; /* As per Figma design */
-        max-width: 1440px; /* Full desktop width */
-        margin: 0 auto;
-        padding: 0;
-        display: flex;
-        align-items: center;
-    }
     
+    body {
+        margin: 0 10%;
+    }
+
+
     .hero-section .container {
         max-width: 1286px; /* Content area width as per Figma */
         width: 100%;
-        margin: 0 auto;
-        padding: 0 76px; /* Side padding as per Figma */
     }
     
     .hero-section .row {
         display: flex;
         align-items: center;
         height: 100%;
-        margin: 0;
     }
     
-    .hero-section .col-12 {
+    .hero-section {
         display: grid;
-        grid-template-columns: 1fr 659px; /* Content area + image width from Figma */
-        gap: 40px; /* Gap between content and image */
+        grid-template-columns: repeat(3, 1fr); /* Content area + image width from Figma */
+        grid-template-rows: repeat(3, 1fr);
         align-items: center;
-        padding: 0;
         height: 100%;
     }
     
     /* Hero banner - right side */
     .hero-banner {
-        order: 2;
-        width: 659px; /* As per Figma */
-        height: 659px; /* As per Figma - square image */
-        margin: 0;
         border-radius: 0; /* No border radius for desktop */
-        overflow: hidden;
         grid-column: 2;
+        grid-row:span 3;
     }
     
-    .hero-banner-image {
-        width: 100%;
-        height: 100%;
-        object-fit: fill; /* Fill as per Figma scaleMode */
-        object-position: center;
-    }
     
     /* Hero content area - reorder content for desktop */
     .hero-title {
@@ -470,10 +449,7 @@ textarea:focus {
     }
     
     .hero-title {
-        font-size: 4rem; /* Large desktop title */
-        max-width: 630px; /* As per Figma */
         margin-bottom: 50px; /* Space between title and description */
-        line-height: 1.1;
         text-align: left;
     }
     
@@ -507,7 +483,7 @@ textarea:focus {
         width: 229px; /* As per Figma */
         height: 66px; /* As per Figma */
         font-size: 1.25rem;
-        background-color: transparent;
+        background-color: rgb(0, 0, 0);
         color: white;
         border: 1px solid var(--dark);
         border-radius: 26px; /* As per Figma */
@@ -2905,16 +2881,14 @@ footer {
     .about-page .hero-title {
         font-size: 3.5rem; /* Much larger for desktop */
         max-width: 866px; /* As per desktop Figma */
-        color: white; /* White text on desktop */
-        order: 1; /* Ensure title comes first */
-        margin-bottom: var(--spacing-lg); /* Add space between title and description */
+        color: white; /* White text on desktop *//* Ensure title comes first */
+        width: 100%;
     }
     
     .about-page .hero-description {
         font-size: 1.25rem; /* Larger for desktop */
         max-width: 971px; /* As per desktop Figma */
-        color: rgba(255, 255, 255, 0.8); /* White text with 80% opacity for better readability */
-        order: 2; /* Ensure description comes second */
+        color: rgba(255, 255, 255, 0.8); /* White text with 80% opacity for better readability */ 
     }
 }
 
@@ -3047,27 +3021,3 @@ footer {
   transform: scaleX(-1);
 }
 
-/*
- * =============================================
- * RESPONSIVE STYLES
- * =============================================
-*/
-@media (min-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr 1fr; /* Two equal columns on larger screens */
-    gap: 3rem;
-  }
-
-  .hero-text-content {
-    text-align: left; /* Align text to the left on larger screens */
-  }
-
-  .hero-subtext {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  
-  .hero-buttons {
-    justify-content: flex-start; /* Align buttons to the left */
-  }
-}
