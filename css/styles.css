@@ -1096,7 +1096,6 @@ textarea:focus {
 }
 
 .see-center-card {
-    =
     border-radius: 22px; /* 22px border radius */
     width: 313px; /* As per Figma */
     height: 115px; /* As per Figma */
@@ -2957,3 +2956,123 @@ footer {
     margin: 0;
     text-align: center;
 } 
+
+
+/*
+ * =============================================
+ * HERO SECTION STYLES
+ * =============================================
+*/
+
+.hero-section {
+  padding: 2rem 0; /* Adds vertical spacing */
+  overflow: hidden; /* Prevents decorative image elements from breaking layout */
+}
+
+/* * CSS Grid container:
+ * - Mobile: A single column, stacking text on top of the image.
+ * - Desktop: A two-column layout.
+*/
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to a single column */
+  gap: 2rem;
+  align-items: center;
+  width: 90%;
+  max-width: 1140px; /* Limits width on very large screens */
+  margin: 0 auto;
+}
+
+.hero-text-content {
+  text-align: center; /* Center text on mobile */
+}
+
+.hero-headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 45ch; /* Improves readability by limiting line length */
+  margin: 0 auto 2rem auto;
+}
+
+/* Container for the buttons */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to stack if needed */
+  justify-content: center; /* Center buttons on mobile */
+  gap: 1rem;
+}
+
+/* Base button styling */
+.btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 22px; /* From Figma's cornerRadius */
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* "Become a Member" button styling from Figma */
+.btn-primary {
+  background-color: #8dbd31; /* rgb(141, 194, 49) */
+  color: #000;
+  border: 1px solid transparent;
+}
+
+/* "View Programs" button styling from Figma */
+.btn-secondary {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #b3b3b3; /* rgb(179, 179, 179) */
+}
+
+/* Styling for the image from Figma */
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  /* Drop shadow from Figma specs */
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.25);
+  /* The Figma transform shows a horizontal flip */
+  transform: scaleX(-1);
+}
+
+/*
+ * =============================================
+ * RESPONSIVE STYLES
+ * =============================================
+*/
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr; /* Two equal columns on larger screens */
+    gap: 3rem;
+  }
+
+  .hero-text-content {
+    text-align: left; /* Align text to the left on larger screens */
+  }
+
+  .hero-subtext {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .hero-buttons {
+    justify-content: flex-start; /* Align buttons to the left */
+  }
+
+  /* Place the image on the right by default in LTR languages */
+  .hero-image-container {
+     /* The grid will handle the order */
+  }
+}
