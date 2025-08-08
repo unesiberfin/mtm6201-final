@@ -144,7 +144,6 @@ textarea:focus {
     padding: var(--spacing-lg) 0 0 0; /* Add top padding for better spacing */
     background: var(--main-bg);
     margin-top: 73px; 
-
 }
 
 /* Override container width for hero section */
@@ -155,11 +154,11 @@ textarea:focus {
     padding-right: 0;
 }
 
+.hero-section .hero-content{}
+
+
 /* Hero banner container */
 .hero-banner {
-    width: 393px;
-    height: 320px; 
-    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
