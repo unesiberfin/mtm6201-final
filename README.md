@@ -11,8 +11,29 @@
 [images](https://www.pexels.com)
 [generated-images](https://chatgpt.com/)
 
+
 ![People enjoying fitness activities](images/membership-banner.jpg)  
+
 ![Group fitness class in session](images/gallery-1.jpg)  
+
 ![Member lifting weights at the gym](images/gallery-2.jpg)  
+
 ![People enjoying a yoga session](images/gallery-3.jpg)  
+
 ![Child learning to swim in the pool](images/gallery-4.jpg)
+
+![RecCenter Logo](images/logo.gif)
+
+![Olympic-sized swimming pool with clear blue water](images/aquatic-center.jpg)
+
+![Modern fitness center with state-of-the-art equipment](images/fitness-center.jpg)
+
+![Robert Wilson, Center Director](images/robert-wilson.jpg)
+
+![Jennifer Martinez, Fitness Manager](images/jennifer-martinez.jpg)
+
+![David Chen, Aquatics Director](images/david-chen.jpg)
+
+![Michelle Johnson, Youth Programs Coordinator](images/michelle-johnson.jpg)
+
+
